@@ -44,11 +44,21 @@
 
 <script>
   "use strict";
+  // 1. При изменении значения в input с id="from", значение содержащееся в нем должно моментально отображаться в span. То есть при печати в input'е тег span также должен меняться.
     const inputFrom = document.querySelector('#from');
     const span = document.querySelector('span');   
     inputFrom.addEventListener('input', (event) => {
         console.log(event.target.value);
         span.innerText = event.target.value; 
+    })
+// 2. При клике на кнопку с классом messageBtn необходимо элементу с классом message:
+// - добавить два класса: animate_animated и animate_fadeInLeftBig
+// - поставить данному элементу стиль visibility в значение 'visible'.
+    const showBlock = document.querySelector('.messageBtn');
+    const hiBlock = document.querySelector('.message');
+    showBlock.addEventListener('click', () => {
+        hiBlock.classList.add('animate_animated', 'animate_fadeInLeftBig');
+        hiBlock.style.visibility = 'visible';
     })
 </script>
 </body>
@@ -56,8 +66,7 @@
 
 
 
-// 1. При изменении значения в input с id="from", значение содержащееся в нем должно моментально отображаться в span. То есть при печати в input'е тег span также должен меняться.
 
-// 2. При клике на кнопку с классом messageBtn необходимо элементу с классом message:
-// - добавить два класса: animate_animated и animate_fadeInLeftBig
-// - поставить данному элементу стиль visibility в значение 'visible'.
+
+
+
